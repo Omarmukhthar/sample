@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Omar Mukhthar - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="orb orb--purple"></div>
+  <div class="orb orb--cyan"></div>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2 class="hero__title">Hi, I'm <span class="text-gradient">Omar Mukhthar</span></h2>
+        <p class="hero__subtitle">I build modern, responsive websites with clean UI & UX.</p>
+        <a href="#contact" class="btn btn--primary">Connect With Me</a>
+      </div>
+    </section>
+
+    <!-- Contact Cards -->
+    <section class="contact container" id="contact">
+      <h2 class="section-title">Contact Me</h2>
+      <div class="card-grid">
+        <div class="card" onclick="window.open('https://www.linkedin.com/in/omarmukhthar', '_blank')">
+          <i class="fab fa-linkedin-in"></i>
+          <span>LinkedIn</span>
+        </div>
+        <div class="card" onclick="window.open('https://github.com/Omarmukhthar', '_blank')">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </div>
+        <div class="card" onclick="alert('Call: +91 8754643365')">
+          <i class="fas fa-phone"></i>
+          <span>Phone</span>
+        </div>
+        <div class="card" onclick="window.location.href='mailto:omarmukhthar01@gmail.com'">
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+        </div>
+      </div>
+    </section>
+  </main>
+    <script type="module" src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+:root {
+  --clr-bg: #0f172a;
+  --clr-text: #e2e8f0;
+  --clr-primary: #8b5cf6;
+  --clr-secondary: #06b6d4;
+  --clr-accent: #ec4899;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+}
+
+/* Background Orbs */
+.orb {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  z-index: 0;
+  animation: pulse 8s infinite ease-in-out;
+}
+
+.orb--purple {
+  top: 10%;
+  left: -100px;
+  background: var(--clr-primary);
+}
+
+.orb--cyan {
+  bottom: 10%;
+  right: -100px;
+  background: var(--clr-secondary);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.nav__logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideIn 1.2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  margin: 1rem 0 2rem;
+  color: #94a3b8;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--clr-primary), var(--clr-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(to right, var(--clr-primary), var(--clr-secondary));
+  color: white;
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #1e293b;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card i {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--clr-primary);
+}
+
+.card span {
+  display: block;
+  font-size: 1rem;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--clr-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1000;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Scroll To Top Button */
+#scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s ease;
+}
+
+#scrollTop:hover {
+  background: var(--clr-secondary);
+}
